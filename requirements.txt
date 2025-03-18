@@ -1,6 +1,0 @@
-opencv-python
-mediapipe
-numpy
-torch
-torchvision
-facenet-pytorch
