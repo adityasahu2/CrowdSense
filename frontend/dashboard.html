@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense Dashboard - Live Camera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+            <span class="logo-text">CrowdSense</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="lost.html">Lost</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="dashboard-header animated-fade-in">
+            <h2 class="dashboard-title">Live Camera Monitoring</h2>
+            <div class="dashboard-controls">
+                <div class="dashboard-tab">All Cameras</div>
+                <div class="dashboard-tab active">Main Entrance</div>
+                <div class="dashboard-tab">Event Hall</div>
+                <div class="dashboard-tab">Parking Area</div>
+            </div>
+        </div>
+
+        <div class="live-camera-grid animated-slide-up" style="animation-delay: 0.1s;">
+            <div class="camera-feed-container">
+                <div class="camera-feed-header">
+                    <span>Main Entrance - Live Feed</span>
+                    <span><i class="fas fa-circle" style="color: var(--danger); font-size: 0.8rem;"></i>
+                        Recording</span>
+                </div>
+                <div class="camera-feed">
+                    <!-- Replace with actual camera feed -->
+                    <div class="camera-feed-placeholder">
+                        <i class="fas fa-video-slash"></i>
+                        <p>Camera Feed Placeholder</p>
+                    </div>
+                    <!-- Zone Indicators -->
+                    <div class="zone-indicator"
+                        style="top: 10%; left: 5%; width: 60%; height: 30%; background-color: rgba(255, 125, 0, 0.15);">
+                        Zone 1
+                    </div>
+                    <div class="zone-indicator"
+                        style="top: 45%; left: 5%; width: 60%; height: 20%; background-color: rgba(0, 180, 216, 0.15);">
+                        Zone 1
+                    </div>
+                    <div class="zone-indicator"
+                        style="top: 70%; left: 5%; width: 60%; height: 20%; background-color: rgba(77, 214, 55, 0.15);">
+                        Zone 1
+                    </div>
+                </div>
+            </div>
+
+            <div class="zone-details">
+                <div class="zone-details-header">
+                    Zone Details
+                </div>
+                <div class="zone-list">
+                    <div class="zone-item active">
+                        <h4>
+                            Zone 1 - Entrance Lobby
+                            <span class="zone-status status-danger">High Density</span>
+                        </h4>
+                        <div class="zone-metrics">
+                            <div class="metric">
+                                <div class="metric-title">People Count</div>
+                                <div class="metric-value">78</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">Density</div>
+                                <div class="metric-value">85%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zone-item">
+                        <h4>
+                            Zone 2 - Waiting Area
+                            <span class="zone-status status-warning">Medium Density</span>
+                        </h4>
+                        <div class="zone-metrics">
+                            <div class="metric">
+                                <div class="metric-title">People Count</div>
+                                <div class="metric-value">42</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">Density</div>
+                                <div class="metric-value">57%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zone-item">
+                        <h4>
+                            Zone 3 - Information Desk
+                            <span class="zone-status status-normal">Normal</span>
+                        </h4>
+                        <div class="zone-metrics">
+                            <div class="metric">
+                                <div class="metric-title">People Count</div>
+                                <div class="metric-value">15</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">Density</div>
+                                <div class="metric-value">28%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="density-grid animated-slide-up" style="animation-delay: 0.2s;">
+            <div class="density-card">
+                <h3 class="density-label">Crowd Density</h3>
+                <div class="density-value">85%</div>
+                <div class="density-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> 12% from yesterday
+                </div>
+            </div>
+            <div class="density-card">
+                <h3 class="density-label">Crowd Density</h3>
+                <div class="density-value">57%</div>
+                <div class="density-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> 5% from yesterday
+                </div>
+            </div>
+            <div class="density-card">
+                <h3 class="density-label">Crowd Density</h3>
+                <div class="density-value">28%</div>
+                <div class="density-trend trend-down">
+                    <i class="fas fa-arrow-down"></i> 3% from yesterday
+                </div>
+            </div>
+            <div class="density-card">
+                <h3 class="density-label">Crowd Density</h3>
+                <div class="density-value">42%</div>
+                <div class="density-trend trend-up">
+                    <i class="fas fa-arrow-up"></i> 7% from yesterday
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">
+                    <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+                    <span>CrowdSense</span>
+                </div>
+                <p>Real-time crowd monitoring and analysis for better safety and management</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CrowdSense. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

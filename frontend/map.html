@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense - Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css">
+    <link rel="stylesheet" href="map.css">
+</head>
+
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+            <span class="logo-text">CrowdSense</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="map.html" class="active">Map</a></li>
+                <li><a href="lost.html">Lost</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Map Section -->
+    <section id="map-section">
+        <div class="map-container">
+            <div class="map-sidebar">
+                <div class="map-controls slide-in">
+                    <h3>Map Controls</h3>
+                    <div class="filter-group">
+                        <label for="crowd-type">Crowd Type</label>
+                        <select id="crowd-type">
+                            <option value="all">All Crowds</option>
+                            <option value="event">Events</option>
+                            <option value="transport">Transport Hubs</option>
+                            <option value="commercial">Commercial Areas</option>
+                            <option value="emergency">Emergency Situations</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="time-range">Time Range</label>
+                        <select id="time-range">
+                            <option value="live">Live</option>
+                            <option value="1h">Last Hour</option>
+                            <option value="6h">Last 6 Hours</option>
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="density-level">Density Level</label>
+                        <input type="range" id="density-level" class="range-slider" min="0" max="100" value="50">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Quick Location</label>
+                        <div class="location-markers">
+                            <div class="marker-item" data-location="downtown">
+                                <i class="fas fa-map-marker-alt marker-icon"></i>
+                                <span>Downtown</span>
+                            </div>
+                            <div class="marker-item" data-location="station">
+                                <i class="fas fa-train marker-icon"></i>
+                                <span>Station</span>
+                            </div>
+                            <div class="marker-item" data-location="park">
+                                <i class="fas fa-tree marker-icon"></i>
+                                <span>City Park</span>
+                            </div>
+                            <div class="marker-item" data-location="mall">
+                                <i class="fas fa-shopping-bag marker-icon"></i>
+                                <span>Shopping Mall</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-legend slide-in">
+                    <h3>Map Legend</h3>
+                    <div class="legend-item">
+                        <div class="legend-color density-high"></div>
+                        <span>High Density</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color density-medium"></div>
+                        <span>Medium Density</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color density-low"></div>
+                        <span>Low Density</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color incident-marker"></div>
+                        <span>Incident</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-main fade-in">
+                <div id="crowd-map"></div>
+            </div>
+        </div>
+
+        <!-- Map Popup (Hidden by default) -->
+        <div class="map-popup" id="location-popup">
+            <i class="fas fa-times map-popup-close" id="popup-close"></i>
+            <h4>Central Station</h4>
+            <p>Real-time crowd density information</p>
+            <div class="popup-data">
+                <div class="data-item">
+                    <div class="data-label">Density:</div>
+                    <div class="data-value">High (85%)</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">People Count:</div>
+                    <div class="data-value">~1,250</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">Flow Rate:</div>
+                    <div class="data-value">120 people/min</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">Last Updated:</div>
+                    <div class="data-value">Just now</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+                <span>CrowdSense</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CrowdSense. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="map.js"></script>
+</body>
+
+</html>

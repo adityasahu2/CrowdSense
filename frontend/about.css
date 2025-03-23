@@ -1,0 +1,252 @@
+/* About Us Section Styles */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+    min-height: calc(100vh - 220px);
+}
+
+.dark-mode .about-section {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.dark-mode .about-header h1 {
+    color: var(--primary-orange);
+}
+
+.about-header p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.dark-mode .about-header p {
+    color: var(--text-light);
+}
+
+.mission-vision {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+    .mission-vision {
+        flex-direction: column;
+    }
+}
+
+.mission,
+.vision {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.mission:hover,
+.vision:hover {
+    transform: translateY(-5px);
+}
+
+.dark-mode .mission,
+.dark-mode .vision {
+    background-color: #132238;
+}
+
+.mission h2,
+.vision h2 {
+    color: var(--primary-blue);
+    font-family: var(--font-secondary);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dark-mode .mission h2,
+.dark-mode .vision h2 {
+    color: var(--primary-orange);
+}
+
+.mission h2 i,
+.vision h2 i {
+    margin-right: 10px;
+    color: var(--primary-orange);
+}
+
+.dark-mode .mission h2 i,
+.dark-mode .vision h2 i {
+    color: var(--primary-orange);
+}
+
+.mission p,
+.vision p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.dark-mode .mission p,
+.dark-mode .vision p {
+    color: var(--text-light);
+}
+
+/* Team Section */
+.team-section {
+    margin-top: 40px;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-header h2 {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    color: var(--primary-blue);
+}
+
+.dark-mode .team-header h2 {
+    color: var(--primary-orange);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.team-member {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.dark-mode .team-member {
+    background-color: #132238;
+}
+
+.member-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-img img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    font-family: var(--font-secondary);
+}
+
+.dark-mode .member-info h3 {
+    color: var(--primary-orange);
+}
+
+.member-role {
+    color: var(--primary-orange);
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.dark-mode .member-role {
+    color: var(--primary-orange);
+}
+
+.member-info p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.dark-mode .member-info p {
+    color: var(--text-muted);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    color: var(--primary-blue);
+    transition: all var(--transition-speed);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.dark-mode .social-links a {
+    background-color: #0A1A2F;
+    color: var(--primary-orange);
+}
+
+.dark-mode .social-links a:hover {
+    background-color: var(--primary-orange);
+    color: var(--dark-bg);
+}

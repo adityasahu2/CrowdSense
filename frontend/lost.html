@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense - Lost Persons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="lost.css">
+</head>
+
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+            <span class="logo-text">CrowdSense</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="lost.html" class="active">Lost</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Lost Persons</h1>
+            <p>Track and manage missing person reports and investigations</p>
+        </div>
+
+        <div class="search-filter-container">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search by name, location, or case ID...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active">
+                    <i class="fas fa-list"></i>
+                    All
+                </button>
+                <button class="filter-btn">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Urgent
+                </button>
+                <button class="filter-btn">
+                    <i class="fas fa-clock"></i>
+                    Recent
+                </button>
+                <button class="filter-btn">
+                    <i class="fas fa-check-circle"></i>
+                    Resolved
+                </button>
+            </div>
+            <button class="new-case-btn">
+                <i class="fas fa-plus"></i>
+                New Case
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="person-cards">
+                <div class="person-card active">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Last seen: Central Park, NYC</p>
+                        <p>Age: 27 • Case #LP-2025-1034</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-active">Active</span>
+                            <span class="person-tag tag-urgent">Urgent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>Michael Chen</h3>
+                        <p>Last seen: Downtown Seattle</p>
+                        <p>Age: 32 • Case #LP-2025-1028</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-active">Active</span>
+                            <span class="person-tag tag-recent">Recent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>Emma Rodriguez</h3>
+                        <p>Last seen: Miami Beach</p>
+                        <p>Age: 19 • Case #LP-2025-1023</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-resolved">Resolved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>David Wilson</h3>
+                        <p>Last seen: Lincoln Park, Chicago</p>
+                        <p>Age: 41 • Case #LP-2025-1020</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-active">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>Olivia Patel</h3>
+                        <p>Last seen: Golden Gate Park, SF</p>
+                        <p>Age: 22 • Case #LP-2025-1018</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-active">Active</span>
+                            <span class="person-tag tag-urgent">Urgent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>James Martinez</h3>
+                        <p>Last seen: Houston Downtown</p>
+                        <p>Age: 35 • Case #LP-2025-1015</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-resolved">Resolved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="/api/placeholder/60/60" alt="Person">
+                    </div>
+                    <div class="person-info">
+                        <h3>Sophia Lee</h3>
+                        <p>Last seen: Boston Common</p>
+                        <p>Age: 29 • Case #LP-2025-1012</p>
+                        <div class="person-tags">
+                            <span class="person-tag tag-active">Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="person-detail-panel">
+                <div class="detail-header">
+                    <div class="detail-image">
+                        <img src="/api/placeholder/120/120" alt="Sarah Johnson">
+                    </div>
+                    <div class="detail-info">
+                        <h2>Sarah Johnson</h2>
+                        <p>Female, 27 years old</p>
+                        <p>Last seen: March 20, 2025 at Central Park, NYC</p>
+                        <p>Case ID: LP-2025-1034</p>
+                        <span class="detail-status status-active">Active Investigation</span>
+                        <div class="detail-actions">
+                            <button class="action-btn primary-action">
+                                <i class="fas fa-bullhorn"></i>
+                                Send Alert
+                            </button>
+                            <button class="action-btn secondary-action">
+                                <i class="fas fa-edit"></i>
+                                Update Case
+                            </button>
+                            <button class="action-btn secondary-action">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-tabs">
+                    <div class="detail-tab active">Information</div>
+                    <div class="detail-tab">Sightings</div>
+                    <div class="detail-tab">Media</div>
+                    <div class="detail-tab">Updates</div>
+                    <div class="detail-tab">Resources</div>
+                </div>
+
+                <div class="detail-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4>Height</h4>
+                            <p>5'7" (170 cm)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Weight</h4>
+                            <p>135 lbs (61 kg)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Hair Color</h4>
+                            <p>Brown</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Eye Color</h4>
+                            <p>Blue</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Phone Number</h4>
+                            <p>(212) 555-8903</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Home Address</h4>
+                            <p>243 E 82nd St, New York, NY</p>
+                        </div>
+                    </div>
+
+                    <div class="description-section">
+                        <h3>Description</h3>
+                        <p>Sarah was last seen wearing a red jacket, blue jeans, and white sneakers. She has a small
+                            butterfly tattoo on her right wrist and was carrying a black backpack. She is a marketing
+                            professional working at TechCorp Inc. and was supposed to meet a friend for lunch but never
+                            arrived.</p>
+                        <p>She may be disoriented due to a recent medication change. Sarah speaks English and
+                            conversational Spanish. She frequents coffee shops around Central Park and the Upper East
+                            Side.</p>
+                    </div>
+
+                    <div class="timeline-section">
+                        <h3>Case Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Case Opened</h4>
+                                    <p>Report filed by Emily Johnson (sister)</p>
+                                    <span class="timeline-time">March 21, 2025 - 10:23 AM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Last Phone Activity</h4>
+                                    <p>Cell tower ping near East 72nd St & 5th Ave</p>
+                                    <span class="timeline-time">March 20, 2025 - 4:17 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Possible Sighting</h4>
+                                    <p>Security camera footage from Lexington Ave subway station</p>
+                                    <span class="timeline-time">March 20, 2025 - 5:30 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Alert Distributed</h4>
+                                    <p>Local alert sent to all CrowdSense users in Manhattan area</p>
+                                    <span class="timeline-time">March 21, 2025 - 12:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Investigation Update</h4>
+                                    <p>Credit card used at convenience store on E 86th St</p>
+                                    <span class="timeline-time">March 22, 2025 - 9:12 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/api/placeholder/40/40" alt="CrowdSense Logo">
+                <span>CrowdSense</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CrowdSense. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="lost.js"></script>
+</body>
+
+</html>

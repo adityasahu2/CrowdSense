@@ -1,0 +1,724 @@
+/* Threats Page Specific Styles */
+body {
+    padding-top: 80px;
+}
+
+/* Main Threats Container */
+.threats-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    color: var(--text-dark);
+    font-family: var(--font-primary);
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.dark-mode .page-header h1 {
+    color: var(--text-light);
+}
+
+/* Overview Section */
+.threats-overview {
+    margin-bottom: 2rem;
+}
+
+.overview-card {
+    padding: 1.5rem;
+}
+
+.time-filter {
+    display: flex;
+    align-items: center;
+}
+
+.time-filter button {
+    background: none;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.time-filter button.active {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.dark-mode .time-filter button.active {
+    background-color: var(--teal);
+}
+
+/* Threat Stats */
+.threat-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-speed);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.dark-mode .stat-card {
+    background-color: var(--dark-bg);
+}
+
+.stat-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.stat-icon.danger {
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--danger);
+}
+
+.stat-icon.warning {
+    background-color: rgba(255, 209, 102, 0.1);
+    color: var(--warning);
+}
+
+.stat-icon.success {
+    background-color: rgba(77, 214, 55, 0.1);
+    color: var(--success);
+}
+
+.stat-icon.teal {
+    background-color: rgba(0, 180, 216, 0.1);
+    color: var(--teal);
+}
+
+.stat-info h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.dark-mode .stat-info h3 {
+    color: var(--text-light);
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.dark-mode .stat-number {
+    color: var(--text-light);
+}
+
+.stat-trend {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.stat-trend i {
+    margin-right: 0.25rem;
+}
+
+.stat-trend.up {
+    color: var(--success);
+}
+
+.stat-trend.down {
+    color: var(--danger);
+}
+
+/* Threats Grid Layout */
+.threats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Card Components */
+.card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    height: 100%;
+}
+
+.dark-mode .card {
+    background-color: var(--dark-bg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-mode .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.dark-mode .card-header h2 {
+    color: var(--text-light);
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.btn-icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--primary-blue);
+}
+
+.dark-mode .btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--teal);
+}
+
+/* Threat Map Styles */
+.threat-map {
+    position: relative;
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.dark-mode .map-overlay {
+    background-color: rgba(10, 26, 47, 0.9);
+}
+
+.map-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.dark-mode .legend-item {
+    color: var(--text-light);
+}
+
+.legend-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.legend-dot.high {
+    background-color: var(--danger);
+}
+
+.legend-dot.medium {
+    background-color: var(--warning);
+}
+
+.legend-dot.low {
+    background-color: var(--success);
+}
+
+/* Threat Types Section */
+.threat-types {
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.type-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.type-label {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.dark-mode .type-label {
+    color: var(--text-light);
+}
+
+.type-label i {
+    margin-right: 0.5rem;
+    width: 16px;
+    text-align: center;
+}
+
+.type-bar-wrapper {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+.dark-mode .type-bar-wrapper {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.type-bar {
+    height: 100%;
+    background-color: var(--primary-blue);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+.dark-mode .type-bar {
+    background-color: var(--teal);
+}
+
+.type-value {
+    width: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.dark-mode .type-value {
+    color: var(--text-light);
+}
+
+/* Recent Threats Table Section */
+.recent-threats-section {
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.search-container input {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    width: 250px;
+    transition: all var(--transition-speed);
+}
+
+.dark-mode .search-container input {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.dark-mode .search-container input:focus {
+    border-color: var(--teal);
+}
+
+.search-btn {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.primary-btn:hover {
+    background-color: #14325a;
+}
+
+.dark-mode .primary-btn {
+    background-color: var(--teal);
+}
+
+.dark-mode .primary-btn:hover {
+    background-color: #0096b7;
+}
+
+.table-container {
+    overflow-x: auto;
+    padding: 0 1.5rem;
+}
+
+.threats-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.threats-table th {
+    padding: 1rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .threats-table th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.threats-table td {
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    color: var(--text-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .threats-table td {
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.threats-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-mode .threats-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.threat-cell {
+    display: flex;
+    align-items: center;
+}
+
+.threat-icon {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.threat-icon.danger {
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--danger);
+}
+
+.threat-icon.warning {
+    background-color: rgba(255, 209, 102, 0.1);
+    color: var(--warning);
+}
+
+.threat-icon.success {
+    background-color: rgba(77, 214, 55, 0.1);
+    color: var(--success);
+}
+
+.threat-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.threat-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge.danger {
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--danger);
+}
+
+.badge.warning {
+    background-color: rgba(255, 209, 102, 0.1);
+    color: var(--warning);
+}
+
+.badge.success {
+    background-color: rgba(77, 214, 55, 0.1);
+    color: var(--success);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.status-badge::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.status-badge.active {
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--danger);
+}
+
+.status-badge.active::before {
+    background-color: var(--danger);
+}
+
+.status-badge.monitoring {
+    background-color: rgba(255, 209, 102, 0.1);
+    color: var(--warning);
+}
+
+.status-badge.monitoring::before {
+    background-color: var(--warning);
+}
+
+.status-badge.resolved {
+    background-color: rgba(77, 214, 55, 0.1);
+    color: var(--success);
+}
+
+.status-badge.resolved::before {
+    background-color: var(--success);
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .table-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-btn {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    color: var(--text-dark);
+    background: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.dark-mode .pagination-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+.pagination-btn.active {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border-color: var(--primary-blue);
+}
+
+.dark-mode .pagination-btn.active {
+    background-color: var(--teal);
+    border-color: var(--teal);
+}
+
+.pagination span {
+    margin-right: 0.5rem;
+    color: var(--text-muted);
+}
+
+.page-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .threat-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .threats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .threats-container {
+        padding: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .type-label {
+        width: 120px;
+    }
+
+    .search-container input {
+        width: 180px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-actions {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .table-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .page-info {
+        text-align: center;
+    }
+
+    .pagination {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .threat-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .type-label {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+
+    .threats-table th:nth-child(3),
+    .threats-table td:nth-child(3),
+    .threats-table th:nth-child(5),
+    .threats-table td:nth-child(5) {
+        display: none;
+    }
+}
